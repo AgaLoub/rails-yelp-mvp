@@ -1,0 +1,24 @@
+<h1>Create a new restaurant</h1>
+
+<%= simple_form_for @restaurant do |r| %>
+  <%= r.input :name %>
+  <%= r.input :address %>
+  <%= r.input :phone_number %>
+  <%= r.input :category, :collection => ['french', 'chinese', 'japanese', 'italian', 'belgian'] %>
+  <%= r.button :submit %>
+<% end %>
+
+<!-- <form action="/restaurants">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <p>Title</p>
+    <input type="text" name="Title">
+  <p>Address</p>
+    <input type="text" name="Address"><br>
+  <p>Phone number</p>
+    <input type="text" name="Phone number"><br>
+  <p>Category</p>
+    <input type="text" name="Category"><br>
+  <button>Create Restaurant</button>
+</form> -->
+
+<%= link_to "Back to list", restaurants_path %>
